@@ -1,0 +1,45 @@
+	Assignment 1: Grep Commands
+
+1) Find all cities that start with a Z.
+
+	 grep '^Z' cities.txt
+
+2) Find all cities that end with 'gan'.
+
+	 grep 'gan$' cities.txt
+
+3) Find all cities that start with A, D, or E.
+
+	 grep '^[A, D, E]' cities.txt
+
+4) Find all cities that have their second letters and third letters  be 'ar', including multiple word cities.
+
+	 grep '\<.ar' cities.txt 
+ 
+5) Find all cities that don't start with a C.
+
+	 grep '^[^C]' cities.txt
+
+6) Find all cities that have atleast 14 characters.
+
+	 grep -E '^.{14,}$' cities.txt | grep -v " "
+ 
+7) Count the cities that start with a B.
+
+	 grep '^B' cities.txt | wc -l
+
+8) Count the number of times 'd' appears in the file
+
+	 grep d -o cities.txt | wc -l
+
+9) List the cities that end with the same letter twice.
+
+ 	grep -E '(.)\1+' cities.txt
+
+10) List the Palindrome cities with 5 characters
+
+	--I couldn't get this one to work. I tried combinations and variations of the below commands
+	--and googling a good amount but couldn't get it to work the intended way. I feel
+	--like I'm ridiculously close.
+	
+	grep -E '^.{5}$' cities.txt | grep -w '^\(.\)\(.\).\2\1' cities.txt.
